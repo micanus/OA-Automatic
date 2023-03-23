@@ -1,3 +1,9 @@
+'''
+동일 구조로 작성된 엑셀파일을 통합하는 Python code
+NTIS 과제 정보, KIPRIS 특허 정보 파일들을 사용하여 디버깅 
+특이사항 : 이전 경력 업무에서 작성한 각각의 파일 통합 코드(Google Colab에서 구동)를 갈무리하여 Python 실행파일로 작성
+'''
+
 #라이브러리 준비
 import pandas as pd
 from time import sleep
