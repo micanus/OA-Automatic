@@ -92,7 +92,8 @@ i=0
 while True:
     clear(0)
     print("데이터프레임의 columns를 확인합니다.")
-    print(pd.read_excel(path+"/"+str(file_list_xls[0]),sheet_name=targetSheet,header=i).columns)
+    print(pd.read_excel(path+"/"+str(file_list_xls[0]),
+                        sheet_name=targetSheet,header=i).columns)
     command = input('위 데이터가 맞습니까?(Y/N, 이전:B)')
     if command == "Y" or command=='y':
         head=i
@@ -110,7 +111,8 @@ df=[]
 error_file=[]
 for i in range(len(file_list_xls)):
     try:
-        df.append(pd.read_excel(path+"/"+str(file_list_xls[i]),sheet_name=targetSheet,header=head))
+        df.append(pd.read_excel(path+"/"+str(file_list_xls[i]),
+                                sheet_name=targetSheet,header=head))
     except:
         error_file.append(i)
     print('진행도: '+str(i)+'/'+str(len(file_list_xls)),end='\r')
@@ -148,7 +150,8 @@ fileName = str(input("확장자를 제외한 파일명 입력: "))
 path = "./output_file"
 createFolder(path)
 #concat_df.to_excel(path+'/'+fileName+'.xlsx',index=False, engine='xlsxwriter')
-writer = pd.ExcelWriter(path+'/'+fileName+'.xlsx', engine='xlsxwriter',engine_kwargs={'options':{'strings_to_formulas': False}})
+writer = pd.ExcelWriter(path+'/'+fileName+'.xlsx', engine='xlsxwriter',
+                        engine_kwargs={'options':{'strings_to_formulas': False}})
 concat_df.to_excel(writer, sheet_name='Sheet1', index=False)
 writer.save()
 
