@@ -154,3 +154,4 @@ cython_debug/
 #ect
 .DS_Store
 sample/
+start.xlsx
